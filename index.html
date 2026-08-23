@@ -44,7 +44,7 @@
       height: 60px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       padding: 0 clamp(1.5rem, 6vw, 5rem);
       background: rgba(248, 247, 244, 0.92);
       backdrop-filter: blur(10px);
@@ -82,7 +82,7 @@
       padding: clamp(6rem, 14vw, 10rem) clamp(1.5rem, 6vw, 5rem) clamp(4rem, 8vw, 6rem);
       padding-top: clamp(6rem, 14vw, 10rem);
       display: grid;
-      grid-template-columns: 1fr 280px;
+      grid-template-columns: 1fr;
       gap: 5rem;
       align-items: center;
       position: relative;
@@ -100,7 +100,7 @@
       pointer-events: none;
     }
 
-    .hero-content { position: relative; z-index: 1; }
+    .hero-content { position: relative; z-index: 1; text-align: center; }
 
     .hero-availability {
       display: inline-flex;
@@ -154,6 +154,7 @@
       display: flex;
       gap: 0.75rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .btn {
@@ -668,8 +669,8 @@
 <nav>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -753,6 +754,47 @@
   </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="reveal">
+    <div class="section-eyebrow">Career</div>
+    <h2 class="section-title">Experience</h2>
+  </div>
+
+  <div class="timeline-item reveal">
+    <div class="tl-left">
+      <div class="tl-company">Vyorius Drones</div>
+      <div class="tl-role">Unity Developer Intern</div>
+      <div class="tl-date">Mar 2026 – May 2026</div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-body">
+        <ul>
+          <li>Implemented differential-thrust motor mixing (Betaflight/ArduPilot/PX4 convention) in Unity C# with reactive propeller torque and PD altitude-hold controller for physics-accurate quadcopter flight simulation.</li>
+          <li>Built a 3D LiDAR sensor simulation (10,800 rays) for obstacle detection; engineered a package delivery system with hard distance constraints and Newton's 3rd law payload physics.</li>
+          <li>Engineered 6 simulation modules (~2,700 lines C#) including multi-level collision damage, LiPo battery discharge modeling, 5 storm zone types, and geofence boundary enforcement.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item reveal">
+    <div class="tl-left">
+      <div class="tl-company">IIIT Dharwad</div>
+      <div class="tl-role">LiDAR Research Intern</div>
+      <div class="tl-date">Jan 2025 – Jun 2025</div>
+    </div>
+    <div class="tl-right">
+      <div class="tl-body">
+        <ul>
+          <li>Acquired and processed LiDAR point cloud data (15k–200k points/scan) from Livox Mid-360, YD LiDAR TG30, and YD LiDAR G2 sensors for agricultural terrain analysis.</li>
+          <li>Denoised raw point clouds with Blender geometry nodes and converted to optimised 3D terrain meshes with MeshLab.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+  
 <!-- PROJECTS -->
 <section id="projects">
   <div class="reveal">
@@ -819,7 +861,7 @@
       </div>
     </a>
 
-    <a class="project-card reveal" href="https://github.com/Jpst01" target="_blank" rel="noopener">
+    <a class="project-card reveal" href="https://github.com/Jpst01/unity-raycast-lidar-ros2" target="_blank" rel="noopener">
       <div class="proj-tags">
         <span class="proj-tag">Unity</span>
         <span class="proj-tag">C#</span>
@@ -834,71 +876,9 @@
         </ul>
       </div>
       <div class="card-footer">
-        <span class="proj-link">github/Jpst01 ↗</span>
+        <span class="proj-link">github/Jpst01/unity-raycast-lidar-ros2 ↗</span>
       </div>
     </a>
-
-    <a class="project-card reveal" href="https://github.com/Jpst01" target="_blank" rel="noopener">
-      <div class="proj-tags">
-        <span class="proj-tag">Isaac Lab</span>
-        <span class="proj-tag">Isaac Sim</span>
-        <span class="proj-tag">Python</span>
-        <span class="proj-tag">RL</span>
-      </div>
-      <div class="card-title">
-        Isaac Lab RL for Manipulation
-        <span class="wip-badge">In Progress</span>
-      </div>
-      <div class="card-desc">
-        Training RL policies for dexterous manipulation in NVIDIA Isaac Lab.
-        Targeting sim-to-real transfer with domain randomization on an RTX 4060.
-      </div>
-      <div class="card-footer">
-        <span class="proj-link">github/Jpst01 ↗</span>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="reveal">
-    <div class="section-eyebrow">Career</div>
-    <h2 class="section-title">Experience</h2>
-  </div>
-
-  <div class="timeline-item reveal">
-    <div class="tl-left">
-      <div class="tl-company">Vyorius Drones</div>
-      <div class="tl-role">Unity Developer Intern</div>
-      <div class="tl-date">Mar 2026 – May 2026</div>
-    </div>
-    <div class="tl-right">
-      <div class="tl-body">
-        <ul>
-          <li>Implemented differential-thrust motor mixing (Betaflight/ArduPilot/PX4 convention) in Unity C# with reactive propeller torque and PD altitude-hold controller for physics-accurate quadcopter flight simulation.</li>
-          <li>Built a 3D LiDAR sensor simulation (10,800 rays) for obstacle detection; engineered a package delivery system with hard distance constraints and Newton's 3rd law payload physics.</li>
-          <li>Engineered 6 simulation modules (~2,700 lines C#) including multi-level collision damage, LiPo battery discharge modeling, 5 storm zone types, and geofence boundary enforcement.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="timeline-item reveal">
-    <div class="tl-left">
-      <div class="tl-company">IIIT Dharwad</div>
-      <div class="tl-role">LiDAR Research Intern</div>
-      <div class="tl-date">Jan 2025 – Jun 2025</div>
-    </div>
-    <div class="tl-right">
-      <div class="tl-body">
-        <ul>
-          <li>Acquired and processed LiDAR point cloud data (15k–200k points/scan) from Livox Mid-360, YD LiDAR TG30, and YD LiDAR G2 sensors for agricultural terrain analysis.</li>
-          <li>Denoised raw point clouds with Blender geometry nodes and converted to optimised 3D terrain meshes with MeshLab.</li>
-        </ul>
-      </div>
-    </div>
   </div>
 </section>
 
